@@ -1509,8 +1509,10 @@
   }
 
   .editor {
-    border: 1px dashed #e8e5d9;
-  }
+  border: 1px dashed #e8e5d9;
+  padding: 16px;
+  box-sizing: border-box;
+}
 
   @media (max-width: 390px) {
     .font-select {
