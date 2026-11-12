@@ -32,6 +32,7 @@
   let contextX = $state(0);
   let contextY = $state(0);
   let contextBelow = $state(false);
+  let isTyping = $state(false);
 
   let renameOpen = $state(false);
   let renameValue = $state("");
