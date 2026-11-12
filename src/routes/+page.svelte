@@ -1225,7 +1225,7 @@
     width: 32px;
     height: 32px;
     flex-shrink: 0;
-    border: 1px dashed var(--line);
+    border: 1px  var(--line);
     border-radius: 7px;
     font-size: 21px;
     font-weight: 300;
@@ -1509,9 +1509,17 @@
   }
 
   .editor {
-  border: 1px dashed #e8e5d9;
   padding: 16px;
+  border: 1px dashed #e8e5d9;
   box-sizing: border-box;
+}
+
+@media (min-width: 768px) {
+  .editor {
+    border: none;
+    border-bottom: 1px solid #e8e5d9;
+    padding: 24px 32px;
+  }
 }
 
   @media (max-width: 390px) {
