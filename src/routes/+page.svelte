@@ -10,7 +10,7 @@
   };
 
   const STORAGE_KEY = "quicksave";
-  const MAX_NOTE_NAME_LENGTH = 16;
+  const MAX_NOTE_NAME_LENGTH = 32;
   const fontSizes = [14, 16, 18, 20, 24];
 
   const emptyNote = (): Note => ({
@@ -702,10 +702,6 @@
     </a>
 
     <div class="top-right">
-      <span class="save-status">
-        <span class="status-dot"></span>
-        Saved locally
-      </span>
 
       <button
         class="icon-button about-button"
@@ -722,15 +718,13 @@
   </header>
 
   <section class="workspace">
-    <div class="editor-meta">
-      <span class="eyebrow">YOUR SPACE</span>
-      <span class="note-count">{notes.length} {notes.length === 1 ? "note" : "notes"}</span>
-    </div>
 
     <div
       bind:this={editor}
       class="editor"
       contenteditable="true"
+      onfocus={() => (isTyping = true)}
+      onblur={() => (isTyping = false)}
       role="textbox"
       aria-label="Note editor"
       aria-multiline="true"
@@ -744,8 +738,7 @@
       style={`font-family: "${font}", sans-serif; font-size: ${fontSize}px;`}
     ></div>
 
-    <div class="editor-footer">
-      <span>Just write. Everything stays here.</span>
+    <div class="editor-footer" class:hidden={isTyping}>
       <span>⌘ / Ctrl + B · I · U</span>
     </div>
   </section>
