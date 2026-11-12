@@ -687,7 +687,7 @@
 </script>
 
 <svelte:head>
-  <title>Quicksave — a little place to think</title>
+  <title>quicksave - notes, quick</title>
   <meta name="theme-color" content={darkMode ? "#191a1c" : "#f7f7f4"} />
   <meta name="description" content="A tiny, local-first space for your thoughts." />
 
